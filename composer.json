@@ -1,0 +1,9 @@
+{
+    "name": "ulysse/stagiaire-formation",
+    "autoload": {
+        "psr-4": {
+            "gestion\\": "src/"
+        }
+    },
+    "require": {}
+}
