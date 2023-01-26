@@ -19,4 +19,11 @@ class StagiaireManager {
         return $stmt->fetchAll();
     }
 
+    public function getAllFormation(){
+        $stmt = $this->bdd->prepare('SELECT * FROM type_de_formation');
+        $stmt->execute(array());
+
+        return $stmt->fetchAll();
+    }
+
 }

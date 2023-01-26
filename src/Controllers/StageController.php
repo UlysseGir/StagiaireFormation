@@ -13,7 +13,8 @@ class StageController {
     }
 
     public function index() {
-        $stagiaires = $this->manager->getAllNationnalite();
+        $nationnalites = $this->manager->getAllNationnalite();
+        $formations = $this->manager->getAllFormation();
         require VIEWS . 'global/insert.php';
     }
 }
