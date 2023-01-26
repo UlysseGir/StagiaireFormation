@@ -1,15 +1,21 @@
-# PROJET_PHP_LYON_2022
-
-Générer la base de donnée avec le fichier "gestion_eleves.sql";
-Ouvrez le fichier "insert.php" dans le dossier php;
-php->insert.php
-
-# STYLE
-le site utilise bootstrap 5.2.3;
-ainsi que du sass (style->style.scss);
-
-# INFO
-
-La fonctionnalité de modification des stagiaire n'est pas fini, la page "modif.php" n'est pas opérationnelle ainsi que la page "modifBack" qui n'as pas était commencée;
-
-le MCD et le MLD de la base de donnée sont dans le dossier "MCD MLD";
+## TACHE
+- Développement du site `12h45`
+    - Front ` 2h45min `
+        - View `2h`
+            - html `30min`
+            - js `1h30`
+        - scss `45min`
+    - Back `8h`
+        - Mise en place du MVC `8h`
+            - Modèles et managers `5h45`
+                - Stagiaire `5h`
+                    - Insert `2h`
+                    - Delete `30min`
+                    - Modif `2h30`
+                - Formateur `45min`
+                    - Show `45min`
+            - Controllers `2h`
+                - Stagiaire `1h30`
+                - Formateur `30min`
+            - Router `15 minutes`
+    - Test et debug `2h`
