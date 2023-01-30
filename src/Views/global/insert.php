@@ -42,6 +42,18 @@ ob_start();
         <div id="formateursListe">            
             <?php
             //Boucle sur tout les formateurs pour les afficher
+            foreach($formateurs as $formateur){
+                ?>
+                <div>
+                    <input type="checkbox">
+                    <?= $formateur["NOM_FORMATEUR"] ?> dans la salle <?= $formateur["NUMERO_SALLE"] ?>, début:
+                    <input type="date">, fin: <input type="date">
+                </div>
+                <?php
+            }?>
+            
+
+            <?php
                 // while ($ligne = mysqli_fetch_assoc($Formateur)){
                 //     echo '
                 //     <input type="checkbox" name="formateurId[]" id="'.$ligne["ID_FORMATION"].'" value="'.$ligne["ID_FORMATEUR"].'" class="formateur">
