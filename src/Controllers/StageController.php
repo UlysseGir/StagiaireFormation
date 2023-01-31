@@ -23,7 +23,7 @@ class StageController {
     }
 
     public function insert(){
-        $insert = $this->StagManager->insert();
-        header("Location:/");
+        $insert = $this->StagManager->insert($_POST["formateurId"]);
+        //header("Location:/");
     }
 }

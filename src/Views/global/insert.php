@@ -50,7 +50,7 @@ ob_start();
                     <label for="debut">début:</label>
                     <input type="date" value="<?= date('Y-m-d') ?>" name="debut_<?= $formateur["ID_FORMATEUR"] ?>" id="debut">
                     <label for="fin">fin:</label>
-                    <input value="<?= date('Y-m-d') ?>" type="date" name="<?= $formateur["ID_FORMATEUR"] ?>" id="fin">
+                    <input value="<?= date('Y-m-d') ?>" type="date" name="fin_<?= $formateur["ID_FORMATEUR"] ?>" id="fin">
                     <br>
                 </div>
                 <?php

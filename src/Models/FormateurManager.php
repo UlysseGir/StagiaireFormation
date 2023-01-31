@@ -26,4 +26,17 @@ class FormateurManager {
         return $stmt->fetchAll();
     }
 
+    // public function insert($formateurId){
+    //     $uniqid = uniqid();
+    //     foreach($formateurId as $cle => $val){
+    //         $stmt = $this->bdd->prepare('INSERT INTO stagiaire_formateur (DATE_DEBUT,DATE_FIN,ID_STAGIAIRE,ID_FORMATEUR) VALUES (:debut,:fin,:stagiaire,:formateur)');
+    //         $stmt->execute(array(
+    //             "debut"=>$_POST["debut_".$val],
+    //             "fin"=>$_POST["fin_".$val],
+    //             "stagiaire"=>$uniqid,
+    //             "formateur"=>$val,
+    //         ));
+    //     }
+    // }
+
 }
