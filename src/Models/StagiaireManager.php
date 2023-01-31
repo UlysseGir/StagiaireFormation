@@ -26,4 +26,17 @@ class StagiaireManager {
         return $stmt->fetchAll();
     }
 
+    public function insert(){
+        $uniqid = uniqid();
+
+        $stmt = $this->bdd->prepare('INSERT INTO stagiaire (nom_stagiaire,prenom_stagiaire,id_stagiaire,id_formation,id_nationnalite) VALUES (:nom,:prenom,:id,:formation,:nationnalite)');
+        $stmt->execute(array(
+            "nom"=>htmlspecialchars($_POST["nom"]),
+            "prenom"=>htmlspecialchars($_POST["prenom"]),
+            "id"=>$uniqid,
+            "nationnalite"=>$_POST["nationalite"],
+            "formation"=>$_POST["formation"],
+        ));
+    }
+
 }

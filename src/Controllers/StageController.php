@@ -21,4 +21,9 @@ class StageController {
         $formateurs = $this->formManager->getAllFormateur();
         require VIEWS . 'global/insert.php';
     }
+
+    public function insert(){
+        $insert = $this->StagManager->insert();
+        header("Location:/");
+    }
 }

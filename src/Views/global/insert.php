@@ -4,7 +4,7 @@ ob_start();
 <h2>INSERT</h2>
     <hr>
     <!-- formulaire -->
-    <form action="insertBack.php" method="POST">
+    <form action="/insert" method="POST">
         <!-- nom -->
         <label for="nom">nom</label>
         <input type="text" name="nom" id="nom" required="required">
@@ -48,9 +48,9 @@ ob_start();
                     <input type="checkbox" name="formateurId[]" id="<?= $formateur["ID_FORMATION"] ?>" value="<?= $formateur["ID_FORMATEUR"] ?>" class="formateur">
                     <label for="<?= $formateur["ID_FORMATEUR"] ?>"><?= $formateur["NOM_FORMATEUR"] ?> <?= $formateur["PRENOM_FORMATEUR"] ?> dans la salle <?= $formateur["NUMERO_SALLE"] ?></label>
                     <label for="debut">début:</label>
-                    <input type="date" name="debut_<?= $formateur["ID_FORMATEUR"] ?>" id="debut">
+                    <input type="date" value="<?= date('Y-m-d') ?>" name="debut_<?= $formateur["ID_FORMATEUR"] ?>" id="debut">
                     <label for="fin">fin:</label>
-                    <input type="date" name="<?= $formateur["ID_FORMATEUR"] ?>" id="fin">
+                    <input value="<?= date('Y-m-d') ?>" type="date" name="<?= $formateur["ID_FORMATEUR"] ?>" id="fin">
                     <br>
                 </div>
                 <?php
