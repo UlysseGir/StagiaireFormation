@@ -7,7 +7,8 @@ use gestion\Models\FormateurManager;
 
 /** Class StageController **/
 class StageController {
-    private $manager;
+    private $StagManager;
+    private $formManager;
 
     public function __construct() {
         $this->StagManager = new StagiaireManager();

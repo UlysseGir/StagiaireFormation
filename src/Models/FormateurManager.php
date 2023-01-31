@@ -13,7 +13,14 @@ class FormateurManager {
     }
 
     public function getAllFormateur(){
-        $stmt = $this->bdd->prepare('SELECT * FROM formateurs JOIN salle ON formateurs.ID_SALLE = salle.ID_SALLE');
+        $stmt = $this->bdd->prepare('SELECT * FROM formateurs JOIN salle ON formateurs.ID_SALLE = salle.ID_SALLE JOIN type_formation_formateur ON formateurs.ID_FORMATEUR = type_formation_formateur.ID_FORMATEUR JOIN type_de_formation ON type_de_formation.ID_FORMATION = type_formation_formateur.ID_FORMATION');
+        $stmt->execute(array());
+
+        return $stmt->fetchAll();
+    }
+
+    public function formation(){
+        $stmt = $this->bdd->prepare('SELECT * FROM type_formation_formateur JOIN formation ON formation.ID_FORMATION = salle.ID_SALLE');
         $stmt->execute(array());
 
         return $stmt->fetchAll();

@@ -21,7 +21,7 @@ ob_start();
         
         foreach($nationnalites as $nationnalite){
             ?>
-            <option value="<?= $nationnalite["LIBELLE_NATIONNALITE"] ?>"><?= $nationnalite["LIBELLE_NATIONNALITE"] ?></option>
+            <option value="<?= $nationnalite["ID_NATIONNALITE"] ?>"><?= $nationnalite["LIBELLE_NATIONNALITE"] ?></option>
             <?php
         }?>
         </select>
@@ -33,7 +33,7 @@ ob_start();
         //Boucle sur les formation pour le select
         foreach($formations as $formation){
             ?>
-            <option value="<?= $formation["LIBELLE_FORMATION"] ?>"><?= $formation["LIBELLE_FORMATION"] ?></option>
+            <option value="<?= $formation["ID_FORMATION"] ?>"><?= $formation["LIBELLE_FORMATION"] ?></option>
             <?php
         }?>
         </select>
@@ -44,25 +44,17 @@ ob_start();
             //Boucle sur tout les formateurs pour les afficher
             foreach($formateurs as $formateur){
                 ?>
-                <div>
-                    <input type="checkbox">
-                    <?= $formateur["NOM_FORMATEUR"] ?> dans la salle <?= $formateur["NUMERO_SALLE"] ?>, début:
-                    <input type="date">, fin: <input type="date">
+                <div>                    
+                    <input type="checkbox" name="formateurId[]" id="<?= $formateur["ID_FORMATION"] ?>" value="<?= $formateur["ID_FORMATEUR"] ?>" class="formateur">
+                    <label for="<?= $formateur["ID_FORMATEUR"] ?>"><?= $formateur["NOM_FORMATEUR"] ?> <?= $formateur["PRENOM_FORMATEUR"] ?> dans la salle <?= $formateur["NUMERO_SALLE"] ?></label>
+                    <label for="debut">début:</label>
+                    <input type="date" name="debut_<?= $formateur["ID_FORMATEUR"] ?>" id="debut">
+                    <label for="fin">fin:</label>
+                    <input type="date" name="<?= $formateur["ID_FORMATEUR"] ?>" id="fin">
+                    <br>
                 </div>
                 <?php
             }?>
-            
-
-            <?php
-                // while ($ligne = mysqli_fetch_assoc($Formateur)){
-                //     echo '
-                //     <input type="checkbox" name="formateurId[]" id="'.$ligne["ID_FORMATION"].'" value="'.$ligne["ID_FORMATEUR"].'" class="formateur">
-                //     <label for="'.$ligne["ID_FORMATEUR"].'">'.$ligne["NOM_FORMATEUR"].' '.$ligne["PRENOM_FORMATEUR"].' dans la salle '.$ligne["NUMERO_SALLE"].',</label> <label for="debut">début:</label><input type="date" name="debut_'.$ligne["ID_FORMATEUR"].'" id="debut"><label for="fin">fin:</label><input type="date" name="fin_'.$ligne["ID_FORMATEUR"].'" id="fin">
-                //     <br>
-                //     ';
-                // }
-            ?>
-
         </div>
         <input type="submit">
     </form>
