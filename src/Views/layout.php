@@ -7,7 +7,7 @@
     <title>— StagiaireFormation —</title>
     <script src="https://kit.fontawesome.com/c1d0ab37d6.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="/style.scss" lang="sass">
 </head>
 <body>
     <header>
