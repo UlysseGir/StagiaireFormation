@@ -26,6 +26,13 @@ class FormateurManager {
         return $stmt->fetchAll();
     }
 
+    public function getFormateurStagiaire($idStagiaire){
+        $stmt = $this->bdd->prepare("SELECT * FROM FORMATEURS JOIN stagiaire_formateur ON formateurs.id_formateur = stagiaire_formateur.id_formateur JOIN salle ON formateurs.id_salle = salle.id_salle WHERE stagiaire_formateur.id_stagiaire = ?");
+        $stmt->execute(array($idStagiaire));
+
+        return $stmt->fetchAll(\PDO::FETCH_CLASS,"gestion\Models\\formateur");
+    }
+
     // public function insert($formateurId){
     //     $uniqid = uniqid();
     //     foreach($formateurId as $cle => $val){

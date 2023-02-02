@@ -28,6 +28,8 @@ class StageController {
     }
 
     public function showDelete(){
+        $stagiaires = $this->StagManager->getAllStagiaire();
+        $formateurs = $this->formManager->getAllFormateur();
         require VIEWS . 'global/delete.php';
     }
 }

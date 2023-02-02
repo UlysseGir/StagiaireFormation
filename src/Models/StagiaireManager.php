@@ -26,6 +26,13 @@ class StagiaireManager {
         return $stmt->fetchAll();
     }
 
+    public function getAllStagiaire(){
+        $stmt = $this->bdd->prepare('SELECT *,nationnalite.LIBELLE_NATIONNALITE as libelle_nationnalite, type_de_formation.LIBELLE_FORMATION as libelle_formation FROM stagiaire JOIN nationnalite ON stagiaire.id_nationnalite = nationnalite.id_nationnalite JOIN type_de_formation ON stagiaire.id_formation = type_de_formation.id_formation');
+        $stmt->execute(array());
+
+        return $stmt->fetchAll(\PDO::FETCH_CLASS,"gestion\Models\Stagiaire");
+    }
+
     public function insert($formateurId){
         $uniqid = uniqid();
 

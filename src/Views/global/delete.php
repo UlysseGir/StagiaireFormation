@@ -1,4 +1,7 @@
 <?php
+
+use gestion\Models\Stagiaire;
+
 ob_start();
 ?>
 <h2>Delete</h2>
@@ -17,23 +20,30 @@ ob_start();
   <tbody>
     <?php
     //Affichage dynamique des différents stagiaires inscrit dans la base de donnée
-        while ($ligne = mysqli_fetch_assoc($stagiaire)){
-            echo '
+        foreach($stagiaires as $stagiaire){
+            ?>
             <tr>
-                <td>'.$ligne["nom_stagiaire"].'</td>
-                <td>'.$ligne["prenom_stagiaire"].'</td>
-                <td>'.$ligne["LIBELLE_NATIONNALITE"].'</td>
-                <td>'.$ligne["LIBELLE_FORMATION"].'</td>';
-                $formateur = mysqli_query($base, "SELECT * FROM FORMATEURS JOIN stagiaire_formateur ON formateurs.id_formateur = stagiaire_formateur.id_formateur JOIN salle ON formateurs.id_salle = salle.id_salle WHERE stagiaire_formateur.id_stagiaire = '".$ligne["id_stagiaire"]."'");
-                echo "<td>";
+                <td><?= $stagiaire->getNom_stagiaire() ?></td>
+                <td><?= $stagiaire->getPrenom_stagiaire() ?></td>
+                <td><?= $stagiaire->getLibelle_nationnalite() ?></td>
+                <td><?= $stagiaire->getLibelle_formation() ?></td>
+                <td>
+                <?php
                 //Affichage des différents formateurs
-                while($ligne2 = mysqli_fetch_assoc($formateur)){
-                    echo $ligne2["NOM_FORMATEUR"].' | '.$ligne2["NUMERO_SALLE"].' | '.$ligne2["DATE_DEBUT"].' | '.$ligne2["DATE_FIN"].'<br>';
-                }
+
+                // /!\ FINISH HERE /!\
+                // foreach($formateurs as $formateur){
+                //     echo $formateur->getNom_formateur().' | '.$formateur["NUMERO_SALLE"].' | '.$formateur["DATE_DEBUT"].' | '.$formateur["DATE_FIN"].'<br>';
+                //     var_dump($formateurs);
+                // }
+
+
                 echo "</td>";
                 //CheckBox pour le delete
-                echo '<td><input type="checkbox" value="'.$ligne["id_stagiaire"].'" name="id[]"></td>';
-    echo '</tr>';
+                //echo '<td><input type="checkbox" value="'.$stagiaire["id_stagiaire"].'" name="id[]"></td>';
+                ?>
+            </tr>
+    <?php
         }   
     ?>
   </tbody>

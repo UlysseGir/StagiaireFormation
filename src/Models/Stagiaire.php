@@ -8,6 +8,9 @@ class Stagiaire {
     private $prenom_stagiaire;
     private $id_formation;
     private $id_nationnalite;
+    private $formateurs = [];
+    private $libelle_nationnalite;
+    private $libelle_formation;
 
     public function getId_stagiaire()
     {
@@ -64,5 +67,35 @@ class Stagiaire {
         return $this;
     }
 
+    public function formateurs(){
+        $manager = new FormateurManager();
 
+        $this->formateurs = $manager->getFormateurStagiaire($this->getId_stagiaire());
+
+        return $this->formateurs;
+    }
+
+    public function getLibelle_nationnalite()
+    {
+        return $this->libelle_nationnalite;
+    }
+
+    public function setLibelle_nationnalite($libelle_nationnalite)
+    {
+        $this->libelle_nationnalite = $libelle_nationnalite;
+
+        return $this;
+    }
+
+    public function getLibelle_formation()
+    {
+        return $this->libelle_formation;
+    }
+
+    public function setLibelle_formation($libelle_formation)
+    {
+        $this->libelle_formation = $libelle_formation;
+
+        return $this;
+    }
 }
