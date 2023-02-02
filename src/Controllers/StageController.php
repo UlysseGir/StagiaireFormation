@@ -24,6 +24,10 @@ class StageController {
 
     public function insert(){
         $insert = $this->StagManager->insert($_POST["formateurId"]);
-        //header("Location:/");
+        header("Location:/");
+    }
+
+    public function showDelete(){
+        require VIEWS . 'global/delete.php';
     }
 }

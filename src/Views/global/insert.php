@@ -58,8 +58,8 @@ ob_start();
         </div>
         <input type="submit">
     </form>
-    <a href="delete.php" class="red">Suppression d'un stagiaire</a>
-    <a href="modif.php" class="yellow">Modification d'un stagiaire</a>
+    <a href="/delete" class="red">Suppression d'un stagiaire</a>
+    <!-- <a href="modif.php" class="yellow">Modification d'un stagiaire</a> -->
     <script>
         //Gestion des checkbox disabled
         let formation = document.getElementById("formation");
